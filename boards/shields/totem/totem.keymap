@@ -226,7 +226,8 @@
 &alt_tab_rev  &kp P        &kp J        &kp M         &kp Z          &kp G              &kp SQT            &dot_colon     &kp MINUS     &comma_semi  &kp W        &kp MENU
 
 //                                        &lt NAV TAB  &lt NUM SPC  &sh_ret_spc  &kp RET  &lt FUN BACKSPACE  &kp DELETE
-                                        &lt NAV TAB  &lt NUM SPC  &mt LS(RET) SPACE  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+//                                        &lt NAV TAB  &lt NUM SPC  &mt LS(RET) SPACE  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+                                        &lt NAV TAB  &lt NUM SPC  &p_ht SPACE LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
             >;
         };
 
