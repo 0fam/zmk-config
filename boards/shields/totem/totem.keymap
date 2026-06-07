@@ -223,11 +223,12 @@
 
               &kp H        &kp N        &kp T         &kp C          &kp F              &kp Q              &kp O          &kp U         &kp Y        &kp V
               &law LGUI K  &law LALT R  &lcs LCTRL D  &lcs LSHIFT B  &kp S              &kp X              &rcs RSHIFT A  &rcs RCTRL E  &raw RALT I  &raw RGUI L
-&alt_tab_rev  &kp P        &kp J        &kp M         &kp Z          &kp G              &kp SQT            &dot_colon     &kp MINUS     &comma_semi  &kp W        &kp MENU
+&alt_tab_rev  &kp P        &kp J        &kp M         &kp Z          &kp G              &kp SQT            &dot_colon     &kp MINUS     &comma_semi  &kp W        &kp K_CONTEXT_MENU
 
 //                                        &lt NAV TAB  &lt NUM SPC  &sh_ret_spc  &kp RET  &lt FUN BACKSPACE  &kp DELETE
-                                        &lt NAV TAB  &lt NUM SPC  &kp LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
-//                                        &lt NAV TAB  &lt NUM SPC  &p_ht SPACE LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+//                                        &lt NAV TAB  &lt NUM SPC  &kp LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+                                        &lt NAV TAB  &lt NUM SPC  &p_ht SPACE LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+//                                        &lt NAV TAB  &lt NUM SPC  &mt LS(RET) SPACE  &kp RET  &lt FUN BACKSPACE  &kp DELETE
             >;
         };
 
