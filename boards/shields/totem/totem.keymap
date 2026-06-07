@@ -88,22 +88,22 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;       // Sleduj ľavý aj pravý Shift
         };
 
-        // Pomocník: podržanie vs klepnutie pre .: ,;
-        p_ht: p_ht {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>; // Presne toto kompilátor vyžaduje (2)
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        // . Shift -> : hold -> , hold Shift -> ;
-        dot_colon_comma_semi: dot_colon_comma_semi {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&p_ht COMMA DOT>, <&p_ht SEMI COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//        // Pomocník: podržanie vs klepnutie pre .: ,;
+//        p_ht: p_ht {
+//            compatible = "zmk,behavior-hold-tap";
+//            #binding-cells = <2>; // Presne toto kompilátor vyžaduje (2)
+//            flavor = "tap-preferred";
+//            tapping-term-ms = <200>;
+//            bindings = <&kp>, <&kp>;
+//        };
+//
+//        // . Shift -> : hold -> , hold Shift -> ;
+//        dot_colon_comma_semi: dot_colon_comma_semi {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&p_ht COMMA DOT>, <&p_ht SEMI COLON>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
 //        // Space hold = Shift+Enter
 //        sh_ret_spc: sh_ret_spc {
@@ -173,14 +173,14 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34>; // Ľavá strana Totemu
         };
 
-        alt_tab_rev: alt_tab_rev {
-            compatible = "zmk,behavior-mod-morph";
-//            label = "ALT_TAB_REVERSED";
-            #binding-cells = <0>;
-            bindings = <&kp LA(TAB)>, <&kp TAB>; // 1. Čistý stisk = Alt+Tab | 2. Ak už držíš Alt = Iba čistý Tab
-            mods = <(MOD_LALT|MOD_RALT)>;        // Sleduj, či na domovskom riadku nedržíš Alt
-            // ZMK ten stlačený Alt natvrdo vynuluje!
-        };
+//        alt_tab_rev: alt_tab_rev {
+//            compatible = "zmk,behavior-mod-morph";
+////            label = "ALT_TAB_REVERSED";
+//            #binding-cells = <0>;
+//            bindings = <&kp LA(TAB)>, <&kp TAB>; // 1. Čistý stisk = Alt+Tab | 2. Ak už držíš Alt = Iba čistý Tab
+//            mods = <(MOD_LALT|MOD_RALT)>;        // Sleduj, či na domovskom riadku nedržíš Alt
+//            // ZMK ten stlačený Alt natvrdo vynuluje!
+//        };
 
         mmv_fast: mmv_fast {
             compatible = "zmk,behavior-step-mouse-move";
