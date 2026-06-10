@@ -29,8 +29,7 @@
     quick-tap-ms = <200>;
 };
 
-/ {
-    combos {
+
     //                                  ┏━━━━━━━━━━┓                                                                    ┏━━━━━━━━━━┓
     //                       ┏━━━━━━━━━━┫     2    ┣━━━━━━━━━━┳━━━━━━━━━━┓                        ┏━━━━━━━━━━┳━━━━━━━━━━┫     7    ┣━━━━━━━━━━┓
     //                       ┃     1    ┣━━━━━━━━━━┫     3    ┃     4    ┃                        ┃     5    ┃     6    ┣━━━━━━━━━━┫     8    ┃
@@ -41,6 +40,9 @@
     // ┃    20    ┣━━━━━━━━━━╋━━━━━━━━━━┛          ┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┓  ┏━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫          ┗━━━━━━━━━━╋━━━━━━━━━━┫    31    ┃
     // ┗━━━━━━━━━━┃    21    ┃                     ┃    32    ┃    33    ┃    34    ┃  ┃    35    ┃    36    ┃    37    ┃                     ┃    30    ┣━━━━━━━━━━┛
     //            ┗━━━━━━━━━━┛                     ┗━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┛  ┗━━━━━━━━━━┻━━━━━━━━━━┛━━━━━━━━━━┛                     ┗━━━━━━━━━━┛
+
+/ {
+    combos {
         compatible = "zmk,combos";
 
         combo_esc {
@@ -50,12 +52,62 @@
             require-prior-idle-ms = <120>;
         };
 
-//        enter_combo {
-//            bindings = <&kp ENTER>;
-//            key-positions = <16 18 17>;
-//            timeout-ms = <70>;
-//            require-prior-idle-ms = <100>;
-//        };
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18 19>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
+        };
+
+        shift_enter_combo {
+            bindings = <&kp LS(ENTER)>;
+            key-positions = <10 11 12 13>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
+        };
+
+        // 2, 3 -> Page Up
+        combo_pgup {
+            timeout-ms = <40>;
+            key-positions = <2 3>;
+            bindings = <&kp PG_UP>;
+        };
+
+        // 6, 7 -> Page Down
+        combo_pgdn {
+            timeout-ms = <40>;
+            key-positions = <6 7>;
+            bindings = <&kp PG_DN>;
+        };
+
+        // 21, 22 -> Scroll Left
+        combo_scrl_left {
+            timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&msc SCRL_LEFT>;
+        };
+
+        // 23, 24 -> Scroll Up
+        combo_scrl_up {
+            timeout-ms = <40>;
+            key-positions = <23 24>;
+            bindings = <&msc SCRL_UP>;
+        };
+
+        // 27, 28 -> Scroll Down
+        combo_scrl_down {
+            timeout-ms = <40>;
+            key-positions = <27 28>;
+            bindings = <&msc SCRL_DOWN>;
+        };
+
+        // 29, 30 -> Scroll Right
+        combo_scrl_right {
+            timeout-ms = <40>;
+            key-positions = <29 30>;
+            bindings = <&msc SCRL_RIGHT>;
+        };
+    };
 
     };
 
@@ -192,15 +244,14 @@
 //            acceleration-exponent = <1>;
 //        };
 
-        // Vlastný názov správania: scrl_combo
         scrl_combo: scrl_combo {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            // Prvá hodnota = čisté stlačenie, Druhá hodnota = stlačenie so Shiftom
+            // Prvá hodnota = čisté stlačenie, Druhá hodnota = stlačenie s AKÝMKOĽVEK modifikátorom
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            // Ktoré modifikátory majú spustiť zmenu (ľavý alebo pravý Shift)
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LCTRL|MOD_RCTRL)>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL)>;
         };
+
     };
 
     conditional_layers {
