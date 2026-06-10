@@ -109,8 +109,6 @@
         };
     };
 
-    };
-
     macros {
         euro_sign: euro_sign {
             compatible = "zmk,behavior-macro";
