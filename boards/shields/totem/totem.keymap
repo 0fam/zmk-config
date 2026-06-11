@@ -287,7 +287,7 @@
 //            ┃     H     ┃     N     ┃     T     ┃     C     ┃     F     ┃                         ┃     Q     ┃     O     ┃     U     ┃     Y     ┃     V     ┃
 //            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //┏━━━━━━━━━━━┫  Win / K  ┃  Alt / R  ┃  Ctrl / D ┃ Shift / B ┃     S     ┃                         ┃     X     ┃ Shift / A ┃ Ctrl / E  ┃  Alt / I  ┃  Win / L  ┣━━━━━━━━━━━┓
-//┃    ESC    ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫SCRL_DWN/UP┃
+//┃    ESC    ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫ SCRL_DOWN ┃
 //┗━━━━━━━━━━━┫     P     ┃     J     ┃     M     ┃     Z     ┃     G     ┃                         ┃    ' "    ┃    . :    ┃    - _    ┃    , ;    ┃     W     ┣━━━━━━━━━━━┛
 //            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓ ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                                ┃ NAV / TAB ┃ NUM / SPC ┃Mou/Shf+RET┃ ┃   ENTER   ┃ BACKSPACE ┃ FUN / DEL ┃
@@ -296,7 +296,7 @@
 
          &kp H        &kp N        &kp T         &kp C          &kp F              &kp Q              &kp O          &kp U         &kp Y        &kp V
          &law LGUI K  &law LALT R  &lcs LCTRL D  &lcs LSHIFT B  &kp S              &kp X              &rcs RSHIFT A  &rcs RCTRL E  &raw RALT I  &raw RGUI L
-&kp ESC  &kp P        &kp J        &kp M         &kp Z          &kp G              &kp SQT            &dot_colon     &kp MINUS     &comma_semi  &kp W        &scrl_combo
+&kp ESC  &kp P        &kp J        &kp M         &kp Z          &kp G              &kp SQT            &dot_colon     &kp MINUS     &comma_semi  &kp W        &msc SCRL_DOWN
 
 //                                        &lt NAV TAB  &lt NUM SPC  &sh_ret_spc  &kp RET  &lt FUN BACKSPACE  &kp DELETE
                                         &lt NAV TAB  &lt NUM SPC  &lt MOUSE LS(RET)  &kp RET  &kp BACKSPACE  &lt FUN DELETE
