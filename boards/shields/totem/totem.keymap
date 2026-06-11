@@ -24,9 +24,15 @@
 #define FUN   4
 #define ADJ   5
 
+//&lt {
+//    flavor = "balanced";
+//    quick-tap-ms = <200>;
+//};
+
 &lt {
-    flavor = "balanced";
-    quick-tap-ms = <200>;
+    flavor = "hold-preferred"; // 🚀 Okamžitá reakcia vrstvy bez čakania
+    tapping-term-ms = <200>;   // Ak ho tam nemáš, doplň ho, nech to nie je lenivé
+    quick-tap-ms = <175>;      // Jemne ostrejší double-tap repeat
 };
 
 
@@ -68,44 +74,50 @@
 
         // 2, 3 -> Page Up
         combo_pgup {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <2 3>;
             bindings = <&kp PG_UP>;
+//            require-prior-idle-ms = <150>;
         };
 
         // 6, 7 -> Page Down
         combo_pgdn {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&kp PG_DN>;
+//            require-prior-idle-ms = <150>;
         };
 
         // 21, 22 -> Scroll Left
         combo_scrl_left {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <21 22>;
             bindings = <&msc SCRL_LEFT>;
+//            require-prior-idle-ms = <150>;
         };
 
         // 23, 24 -> Scroll Up
         combo_scrl_up {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <23 24>;
             bindings = <&msc SCRL_UP>;
+//            require-prior-idle-ms = <150>;
         };
 
         // 27, 28 -> Scroll Down
         combo_scrl_down {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <27 28>;
             bindings = <&msc SCRL_DOWN>;
+//            require-prior-idle-ms = <150>;
         };
 
         // 29, 30 -> Scroll Right
         combo_scrl_right {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <29 30>;
             bindings = <&msc SCRL_RIGHT>;
+//            require-prior-idle-ms = <150>;
         };
     };
 
@@ -242,13 +254,14 @@
 //            acceleration-exponent = <1>;
 //        };
 
-        scrl_combo: scrl_combo {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            // Prvá hodnota = čisté stlačenie, Druhá hodnota = stlačenie s AKÝMKOĽVEK modifikátorom
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL)>;
-        };
+          // toto sa bije s funkciou mysi, skrolovanie s modifikatormi sa meni na zoom a podobne funkcie
+//        scrl_combo: scrl_combo {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            // Prvá hodnota = čisté stlačenie, Druhá hodnota = stlačenie s AKÝMKOĽVEK modifikátorom
+//            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+//            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL)>;
+//        };
 
     };
 
@@ -354,7 +367,7 @@
 //            ┃           ┃           ┃           ┃           ┃           ┃                         ┃           ┃           ┃  SCRL_UP  ┃           ┃           ┃
 //            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //┏━━━━━━━━━━━┫    Win    ┃    Alt    ┃   Ctrl    ┃   Shift   ┃           ┃                         ┃ SCRL_LEFT ┃ MOVE_LEFT ┃  MOVE_UP  ┃ MOVE_RIGHT┃ SCRL_RIGHT┣━━━━━━━━━━━┓
-//┃           ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫           ┃
+//┃           ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫  SCRL_UP  ┃
 //┗━━━━━━━━━━━┫           ┃           ┃           ┃           ┃           ┃                         ┃   MB4     ┃   LCLK    ┃   MCLK    ┃   RCLK    ┃    MB5    ┣━━━━━━━━━━━┛
 //            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓ ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                                ┃           ┃           ┃           ┃ ┃           ┃ SCRL_DOWN ┃   DOWN    ┃
@@ -364,7 +377,7 @@
 
             &trans       &trans      &trans       &none         &trans       &none           &none           &msc SCRL_UP  &none            &none
             &kp LGUI     &kp LALT    &kp LCTRL    &kp LSHIFT    &trans       &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_RIGHT  &msc SCRL_RIGHT
-    &trans  &trans       &trans      &trans       &trans        &trans       &mkp MB4        &mkp LCLK       &mkp MCLK     &mkp RCLK        &mkp MB5         &trans
+    &trans  &trans       &trans      &trans       &trans        &trans       &mkp MB4        &mkp LCLK       &mkp MCLK     &mkp RCLK        &mkp MB5         &msc SCRL_UP
 
                                                  &trans   &trans   &trans     &trans    &msc SCRL_DOWN    &mmv MOVE_DOWN
             >;
