@@ -19,22 +19,26 @@
 #
 ---
 include:
-#  - board: seeeduino_xiao_ble # seeeduino_xiao_ble for v0.3.0 Vs xiao_ble//zmk for main
-#    shield: totem_left
-#    snippet: studio-rpc-usb-uart
-#    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-#  - board: seeeduino_xiao_ble
-#    shield: totem_right
+# standard build
+  - board: seeeduino_xiao_ble # seeeduino_xiao_ble for v0.3.0 Vs xiao_ble//zmk for main
+    shield: totem_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+  - board: seeeduino_xiao_ble
+    shield: totem_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
+
+# 4dB version (stronger signal)
   - board: seeeduino_xiao_ble
     shield: totem_left
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_BT_CTLR_TX_PWR_PLUS_2
-    artifact-name: totem_left_2dB
-  - board: seeeduino_xiao_ble -DCONFIG_BT_CTLR_TX_PWR_PLUS_2
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_BT_CTLR_TX_PWR_PLUS_4
+    artifact-name: totem_left_4dB
+  - board: seeeduino_xiao_ble -DCONFIG_BT_CTLR_TX_PWR_PLUS_4
     shield: totem_right
-    artifact-name: totem_right_2dB
+    artifact-name: totem_right_4dB
+
 ##    experimental = 1MBit, do not want to use it right now
 #  - board: seeeduino_xiao_ble
 #    shield: totem_left
