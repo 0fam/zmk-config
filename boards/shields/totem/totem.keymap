@@ -292,15 +292,15 @@
 //            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓ ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                                ┃ NAV / TAB ┃ NUM / SPC ┃Mou/Shf+RET┃ ┃   ENTER   ┃ BACKSPACE ┃ FUN / DEL ┃
 //                                                ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛ ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//g f u l j      b d m p h
-//o a e r -      x s n t i
-//. y w v '      q c k z ,
+//  , y c v w      g d k z b
+//  r o a n '      - t e i s
+//  . j u l x      q m p h f
 
             bindings = <
 
-                &kp G         &kp F          &kp U           &kp L   &kp J              &kp B           &kp D         &kp M        &kp P        &kp H
-          &law LGUI O   &law LALT A   &lcs LCTRL E   &lcs LSHIFT R   &kp MINUS          &kp X   &rcs RSHIFT S  &rcs RCTRL N  &raw RALT T  &raw RGUI I
-&kp ESC    &dot_colon         &kp Y          &kp W           &kp V   &kp SQT            &kp Q           &kp C         &kp K        &kp Z  &comma_semi  &msc SCRL_DOWN
+          &comma_semi         &kp Y          &kp C           &kp V   &kp W          &kp G               &kp D          &kp K         &kp Z         &kp B
+          &law LGUI R   &law LALT O   &lcs LCTRL A   &lcs LSHIFT N   &kp SQT        &kp MINUS   &rcs RSHIFT T   &rcs RCTRL E   &raw RALT I   &raw RGUI S
+&kp ESC    &dot_colon         &kp J          &kp U           &kp L   &kp X          &kp Q               &kp M          &kp P         &kp H         &kp F   &msc SCRL_DOWN
 
 //                                        &lt NAV TAB  &lt NUM SPC  &sh_ret_spc  &kp RET  &lt FUN BACKSPACE  &kp DELETE
                                         &lt NAV TAB  &lt NUM SPC  &lt MOUSE LS(RET)  &kp RET  &kp BACKSPACE  &lt FUN DELETE
