@@ -18,11 +18,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE  0
-#define NAV   1 // + SYMBOLS
-#define NUM   2
-#define MOUSE 3
-#define FUN   4
-#define ADJ   5
+#define BASE1 1
+#define BASE2 2
+#define NAV   3 // + SYMBOLS
+#define NUM   4
+#define MOUSE 5
+#define FUN   6
+#define ADJ   7
 
 //&lt {
 //    flavor = "balanced";
@@ -36,16 +38,16 @@
 };
 
 
-    //                                  ┏━━━━━━━━━━┓                                                                    ┏━━━━━━━━━━┓
-    //                       ┏━━━━━━━━━━┫     2    ┣━━━━━━━━━━┳━━━━━━━━━━┓                        ┏━━━━━━━━━━┳━━━━━━━━━━┫     7    ┣━━━━━━━━━━┓
-    //                       ┃     1    ┣━━━━━━━━━━┫     3    ┃     4    ┃                        ┃     5    ┃     6    ┣━━━━━━━━━━┫     8    ┃
-    //            ┏━━━━━━━━━━╋━━━━━━━━━━┫    12    ┣━━━━━━━━━━╋━━━━━━━━━━┫                        ┣━━━━━━━━━━╋━━━━━━━━━━┫    17    ┣━━━━━━━━━━╋━━━━━━━━━━┓
-    //            ┃     0    ┃    11    ┣━━━━━━━━━━┫    13    ┃    14    ┃                        ┃    15    ┃    16    ┣━━━━━━━━━━┫    18    ┃     9    ┃
-    //            ┣━━━━━━━━━━╋━━━━━━━━━━┫    23    ┣━━━━━━━━━━╋━━━━━━━━━━┫                        ┣━━━━━━━━━━╋━━━━━━━━━━┫    28    ┣━━━━━━━━━━╋━━━━━━━━━━┫
-    // ┏━━━━━━━━━━┫    10    ┃    22    ┣━━━━━━━━━━┫    24    ┃    25    ┃                        ┃    26    ┃    27    ┣━━━━━━━━━━┫    29    ┃    19    ┣━━━━━━━━━━┓
-    // ┃    20    ┣━━━━━━━━━━╋━━━━━━━━━━┛          ┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┓  ┏━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫          ┗━━━━━━━━━━╋━━━━━━━━━━┫    31    ┃
-    // ┗━━━━━━━━━━┃    21    ┃                     ┃    32    ┃    33    ┃    34    ┃  ┃    35    ┃    36    ┃    37    ┃                     ┃    30    ┣━━━━━━━━━━┛
-    //            ┗━━━━━━━━━━┛                     ┗━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┛  ┗━━━━━━━━━━┻━━━━━━━━━━┛━━━━━━━━━━┛                     ┗━━━━━━━━━━┛
+//                                    ┏━━━━━━━━━━┓                                                                    ┏━━━━━━━━━━┓
+//                         ┏━━━━━━━━━━┫     2    ┣━━━━━━━━━━┳━━━━━━━━━━┓                        ┏━━━━━━━━━━┳━━━━━━━━━━┫     7    ┣━━━━━━━━━━┓
+//                         ┃     1    ┣━━━━━━━━━━┫     3    ┃     4    ┃                        ┃     5    ┃     6    ┣━━━━━━━━━━┫     8    ┃
+//              ┏━━━━━━━━━━╋━━━━━━━━━━┫    12    ┣━━━━━━━━━━╋━━━━━━━━━━┫                        ┣━━━━━━━━━━╋━━━━━━━━━━┫    17    ┣━━━━━━━━━━╋━━━━━━━━━━┓
+//              ┃     0    ┃    11    ┣━━━━━━━━━━┫    13    ┃    14    ┃                        ┃    15    ┃    16    ┣━━━━━━━━━━┫    18    ┃     9    ┃
+//              ┣━━━━━━━━━━╋━━━━━━━━━━┫    23    ┣━━━━━━━━━━╋━━━━━━━━━━┫                        ┣━━━━━━━━━━╋━━━━━━━━━━┫    28    ┣━━━━━━━━━━╋━━━━━━━━━━┫
+//   ┏━━━━━━━━━━┫    10    ┃    22    ┣━━━━━━━━━━┫    24    ┃    25    ┃                        ┃    26    ┃    27    ┣━━━━━━━━━━┫    29    ┃    19    ┣━━━━━━━━━━┓
+//   ┃    20    ┣━━━━━━━━━━╋━━━━━━━━━━┛          ┣━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┓  ┏━━━━━━━━━━╋━━━━━━━━━━╋━━━━━━━━━━┫          ┗━━━━━━━━━━╋━━━━━━━━━━┫    31    ┃
+//   ┗━━━━━━━━━━┃    21    ┃                     ┃    32    ┃    33    ┃    34    ┃  ┃    35    ┃    36    ┃    37    ┃                     ┃    30    ┣━━━━━━━━━━┛
+//              ┗━━━━━━━━━━┛                     ┗━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┛  ┗━━━━━━━━━━┻━━━━━━━━━━┛━━━━━━━━━━┛                     ┗━━━━━━━━━━┛
 
 / {
     combos {
@@ -292,20 +294,65 @@
 //            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓ ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                                ┃ NAV / TAB ┃ NUM / SPC ┃Mou/Shf+RET┃ ┃   ENTER   ┃ BACKSPACE ┃ FUN / DEL ┃
 //                                                ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛ ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//  , y c v w      g d k z b
-//  r o a n '      - t e i s
-//  . j u l x      q m p h f
+//  , y c v w    g d k z b
+//  r o a n '    - t e i s
+//  . j u l x    q m p h f
+
+//  W G Y V X    Q B H J F
+//  R O A N .    , T E I S
+//  L Z U M -    ' D P K C
+
 
             bindings = <
 
-          &comma_semi         &kp Y          &kp C           &kp V   &kp W          &kp G               &kp D          &kp K         &kp Z         &kp B
-          &law LGUI R   &law LALT O   &lcs LCTRL A   &lcs LSHIFT N   &kp SQT        &kp MINUS   &rcs RSHIFT T   &rcs RCTRL E   &raw RALT I   &raw RGUI S
-&kp ESC    &dot_colon         &kp J          &kp U           &kp L   &kp X          &kp Q               &kp M          &kp P         &kp H         &kp F   &msc SCRL_DOWN
+           &kp W          &kp G         &kp Y          &kp V         &kp X            &kp Q          &kp B          &kp H          &kp J         &kp F
+        &law LGUI R   &law LALT O   &lcs LCTRL A   &lcs LSHIFT N   &dot_colon      &comma_semi   &rcs RSHIFT T   &rcs RCTRL E   &raw RALT I   &raw RGUI S
+&kp ESC    &kp L          &kp Z         &kp U          &kp M       &kp MINUS         &kp SQT         &kp D          &kp P          &kp K         &kp C    &msc SCRL_DOWN
 
 //                                        &lt NAV TAB  &lt NUM SPC  &sh_ret_spc  &kp RET  &lt FUN BACKSPACE  &kp DELETE
                                         &lt NAV TAB  &lt NUM SPC  &lt MOUSE LS(RET)  &kp RET  &kp BACKSPACE  &lt FUN DELETE
 //                                        &lt NAV TAB  &lt NUM SPC  &p_ht SPACE LS(RET)  &kp RET  &lt FUN BACKSPACE  &kp DELETE
 //                                        &lt NAV TAB  &lt NUM SPC  &mt LS(RET) SPACE  &kp RET  &lt FUN BACKSPACE  &kp DELETE
+            >;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        base_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            label = "BASE1";
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//  GFULJ BDMPH
+//  OAER- XSNTI
+//  .YWV' QCKZ,
+
+            bindings = <
+
+               &kp G         &kp F          &kp U           &kp L       &kp J         &kp B           &kp D          &kp M         &kp P         &kp H
+         &law LGUI O   &law LALT A   &lcs LCTRL E   &lcs LSHIFT R   &kp MINUS         &kp X   &rcs RSHIFT S   &rcs RCTRL N   &raw RALT T   &raw RGUI I
+&kp ESC   &dot_colon         &kp Y          &kp W           &kp V     &kp SQT         &kp Q           &kp C          &kp K         &kp Z   &comma_semi  &msc SCRL_DOWN
+
+                                                    &trans   &trans   &trans       &trans   &trans   &trans
+            >;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        base_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            label = "BASE2";
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//   WGVYX    QJHBF
+//   MOEA.    ,NITS
+//   LZPU-    'RKDC
+
+            bindings = <
+
+           &kp W          &kp G         &kp V          &kp Y         &kp X            &kp Q          &kp J          &kp H          &kp B         &kp F
+        &law LGUI M   &law LALT O   &lcs LCTRL E   &lcs LSHIFT A   &dot_colon      &comma_semi   &rcs RSHIFT N   &rcs RCTRL I   &raw RALT T   &raw RGUI S
+&kp ESC    &kp L          &kp Z         &kp P          &kp U       &kp MINUS         &kp SQT         &kp R          &kp K          &kp D         &kp C    &msc SCRL_DOWN
+
+                                                    &trans   &trans   &trans       &trans   &trans   &trans
             >;
         };
 
@@ -429,20 +476,20 @@
             label = "ADJ";
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //            ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓                         ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//            ┃   RESET   ┃           ┃  OUT TOG  ┃ BT_SEL 0  ┃           ┃                         ┃  BT CLEAR ┃           ┃           ┃           ┃   RESET   ┃
+//            ┃   RESET   ┃  OUT TOG  ┃ BT_SEL 0  ┃           ┃ BT CLEAR  ┃                         ┃           ┃           ┃           ┃           ┃   RESET   ┃
 //            ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//┏━━━━━━━━━━━┫           ┃           ┃           ┃ BT_SEL 1  ┃           ┃                         ┃           ┃  BT NEXT  ┃           ┃           ┃           ┣━━━━━━━━━━━┓
+//┏━━━━━━━━━━━┫           ┃           ┃ BT_SEL 1  ┃  BT NEXT  ┃           ┃                         ┃           ┃           ┃           ┃           ┃           ┣━━━━━━━━━━━┓
 //┃  BOOTLOAD ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫                         ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫ BOOTLOAD  ┃
-//┗━━━━━━━━━━━┫           ┃   UNLOCK  ┃           ┃ BT_SEL 2  ┃           ┃                         ┃           ┃  BT PREV  ┃           ┃  UNLOCK   ┃           ┣━━━━━━━━━━━┛
+//┗━━━━━━━━━━━┫   UNLOCK  ┃           ┃ BT_SEL 2  ┃  BT PREV  ┃           ┃                         ┃           ┃           ┃           ┃           ┃  UNLOCK   ┣━━━━━━━━━━━┛
 //            ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓ ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                                ┃           ┃           ┃           ┃ ┃           ┃           ┃           ┃
 //                                                ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛ ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
 
-               &sys_reset    &none     &out OUT_TOG   &bt BT_SEL 0  &none        &bt BT_CLR   &none      &none       &none        &sys_reset
-                 &none       &none        &none       &bt BT_SEL 1  &none        &none     &bt BT_NXT    &none       &none           &none
-    &bootloader  &none   &studio_unlock   &none       &bt BT_SEL 2  &none        &none     &bt BT_PRV    &none    &studio_unlock     &none       &bootloader
+               &sys_reset   &out OUT_TOG  &bt BT_SEL 0     &none   &bt BT_CLR                             &none     &none     &none     &none     &sys_reset
+                 &none         &none      &bt BT_SEL 1  &bt BT_NXT   &none                                &none     &none     &none     &none        &none
+ &bootloader &studio_unlock    &none      &bt BT_SEL 2  &bt BT_PRV   &none                                &none     &none     &none     &none    &studio_unlock  &bootloader
 
                                                  &trans   &trans   &trans     &trans    &trans   &trans
             >;
